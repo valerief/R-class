@@ -15,6 +15,8 @@ cc <- seq(15, 70, length.out=332)
 # script window, far right button: make Html page of script and plot
 # File > new project - separate set for env (workspace), working dir, etc 
 
-# print current plot: dev.print(pdf, "plot.pdf") # (ext, "filename")
+# print current plot: 
+dev.print(pdf, "plot.pdf") # (ext, "filename")
+dev.print(png, "cambodia.png")
 
 
