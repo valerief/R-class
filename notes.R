@@ -1,3 +1,5 @@
+## Bernhard - session 1 - Rstudio basics
+
 # R studio shortcuts:
 # <-  alt-minus
 # auto-complete: tab- opens drop-down of options

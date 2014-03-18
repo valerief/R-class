@@ -1,3 +1,5 @@
+## Jenny B
+
 # load data from web:
 gdURL <- "http://tiny.cc/gapminder"
 gDat <- read.delim(gdURL)
@@ -67,12 +69,61 @@ cam <- subset(gDat, country=="Cambodia")
 with(cam, cor(lifeExp, gdpPercap))
 
 ## VECTORS:
-# index elements using [ ]
-y <- c(1,2,3)
-class(y) # numeric vector
-x <- c(y, "a", "b")
-class(x) # now it's a character vector
+
+## index elements using [ ]
+
+x <- c(1,2,3)
+class(x) # numeric vector
+x <- c(x, "a", "b")
+class(x) # now it's a character vector (numbers converted to text)
 x[4] # output the 4th element
 x[6] <- "c" # add a 6th element
 x[5]  <- "bb" # replace the 5th element
+
+# create and print to console: put ( ) around command
+(y <- 1:3)
+(z <- 3:7)
+# math operations
+y+z # elemnet-wise, recycling shorter vector
+y*2 # each element is multiplied by 2
+
+## more indexing
+
+x <- -3:3
+# create logical vector w/ T or F for each element of x
+x<0
+
+(x <- round(rnorm(8), 2))
+names(x) <- letters[1:8] # or letters[seq_long(x)]
+# output element named "g"
+x["g"]
+x[c("a", "b", "e")]
+# output name and value of 4th element
+x[4]
+# neg index: report everything but 7th element:
+x[-7]
+# subset
+x[x<0]
+# logical vector
+x<0
+# names and indeces of Trues for statement
+which(x<0)
+# get every other element of x - options:
+x[seq(1,length(x),2)] # from 1 to length of x, by 2 => odds
+x[seq(2, length(x), by=2)] # evens
+x[seq(length(x)) %% 2 ==0] # evens
+x[c(F,T)] # evens
+x[c(T,F)] # odds
+
+## MATRIX
+
+month.abb # abbrev months, char vector length 12
+month.name # month names, char, length 12
+(xx <- cbind(month.abb, month.name)) # bind by columns to make matrix
+(xx <- rbind(month.abb, month.name)) # bind by rows to make matrix
+
+# create data frame, create month.num for 1st col, keep identity (class type -- Inhibit forcing to simpler format, eg factor) of month.abb and month.name
+(x <- data.frame(month.num=1:12, I(month.abb), I(month.name)))
+# output item in row 2, col 3
+x[2,3]
 
