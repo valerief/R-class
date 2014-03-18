@@ -27,3 +27,6 @@ cp xfilenamex xdirx xlocx # copy file to stated loc(dir)
 cp xfilenamex ../dummy\finalfolder
 cp xfilenamex ../dummy # ../move up one (not sub-dir but sister dir)
 
+# GIT HUB (online)
+# set up new repository online
+# in R studio, File > New Project > Version control > Git > enter URL of new repository in Origin box, OK
